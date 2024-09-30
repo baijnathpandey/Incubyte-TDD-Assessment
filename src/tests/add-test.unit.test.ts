@@ -16,4 +16,8 @@ describe('Add funcrion test', () => {
     expect(result).toBe(6)
   })  
 
+  test('With any amount of numbers', async () => {
+    const result = add('1,2,3,4,5,6,7,8,9,10,11,12,15,17')
+    expect(result).toBe(110)
+  }) 
 })
