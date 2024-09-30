@@ -35,4 +35,9 @@ describe('Test Add function', () => {
     const result = add('//!\n5!6!8')
     expect(result).toBe(19)
   })
+
+  test('With negative numbers', async () => {
+    const result = add('1,-2,3,-4,-5')
+    expect(result).toBeFalsy()
+  })
 })
