@@ -7,6 +7,13 @@ const splitAndAdd = (numbers: string, delimiter: string): number => {
 }
 
 export const add = (numbers: string): number => {
-    const replacedNumbers = numbers.replace('\n', ',')
-    return splitAndAdd(replacedNumbers, ',')
+    let delimiter = ','
+    let inutString = numbers
+
+    if (numbers.startsWith('//')) {
+        delimiter = numbers.slice(2,3)
+        inutString = numbers.split('\n').pop()
+    }
+    inutString = inutString.replace('\n', delimiter)
+    return splitAndAdd(inutString, delimiter)
 }

@@ -24,5 +24,15 @@ describe('Test Add function', () => {
   test('With new line dilimiter', async () => {
     const result = add('1\n2,3')
     expect(result).toBe(6)
-  }) 
+  })
+  
+  test('With custom dilimiter (;)', async () => {
+    const result = add('//;\n1;2')
+    expect(result).toBe(3)
+  })
+
+  test('With custom dilimiter (!)', async () => {
+    const result = add('//!\n5!6!8')
+    expect(result).toBe(19)
+  })
 })
