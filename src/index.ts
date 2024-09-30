@@ -7,5 +7,6 @@ const splitAndAdd = (numbers: string, delimiter: string): number => {
 }
 
 export const add = (numbers: string): number => {
-    return splitAndAdd(numbers, ',')
+    const replacedNumbers = numbers.replace('\n', ',')
+    return splitAndAdd(replacedNumbers, ',')
 }
